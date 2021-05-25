@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -17,7 +17,9 @@
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="script.js"></script>
   </head>
-  <!--Rough Draft 1-->
+  <!--------------------------------------------------------------------------------------------->
+  <!-------------------------------------Rough Draft 1------------------------------------------->
+  <!--------------------------------------------------------------------------------------------->
   <body>
     <div data-role="page" id="home">
       <!-- header -->
@@ -43,7 +45,7 @@
         <div id="homeDiv">
           <div data-role="content" data-theme="b" class="contents">
             Add shows you've watched or finished and give them ratings! Plus,
-            additional information will be given about how you rate!
+            additional information will be given about your movies!
           </div>
         </div>
       </div>
@@ -56,10 +58,6 @@
         <h3>Copyright 2021 by Dylan Wood & Nathan Nixon</h3>
       </div>
     </div>
-
-    <!-- ============================================================================= -->
-    <!-- ==========================STATS=============================================== -->
-    <!-- ============================================================================= -->
 
     <div data-role="page" id="stats">
       <!-- header -->
@@ -85,38 +83,37 @@
       <div data-role="content" data-theme="a">
         <h3>Here is some Information We Gathered &#8628;</h3>
         <ul>
-          <div class="information">
-            <li>
-              Amount of Movies Watched Total:
-              <div id="numMovies" class="stat"></div>
-            </li>
-          </div>
-          <div class="information">
+          <li>
+            Amount of Movies Watched Total:
+            <div id="numMovies" class="stat"></div>
+          </li>
+
+          <li>
             <div>TV Series Watched:</div>
             <div id="numTV" class="stat"></div>
-          </div>
-          <div class="information">
+          </li>
+          <li>
             <div>Shows Finished:</div>
             <div id="numFinished" class="stat"></div>
-          </div>
-          <div class="information">
+          </li>
+          <li>
             <div>Shows Watching:</div>
             <div id="numWatching" class="stat"></div>
-          </div>
-          <div class="information">
+          </li>
+          <li>
             <div>Shows Planning to Watch:</div>
             <div id="numPlanToWatch" class="stat"></div>
-          </div>
+          </li>
         </ul>
       </div>
+    </div>
 
-      <!-- notes footer -->
-      <div data-role="footer" data-theme="a">
-        <div class="centering">
-          <img src="thankyou.svg" alt="Thank you!" width="200" />
-        </div>
-        <h3>Copyright 2021 by Dylan Wood & Nathan Nixon</h3>
+    <!-- notes footer -->
+    <div data-role="footer" data-theme="a">
+      <div class="centering">
+        <img src="thankyou.svg" alt="Thank you!" width="200" />
       </div>
+      <h3>Copyright 2021 by Dylan Wood & Nathan Nixon</h3>
     </div>
 
     <div data-role="page" id="add">
@@ -146,6 +143,7 @@
           <option value="Movie">Movie</option>
           <option value="TV Series">TV Series</option>
         </select>
+
         <label for="status">Current Status:</label>
         <select name="status" id="status">
           <option value="Watching">Watching</option>
@@ -153,6 +151,7 @@
           <option value="Dropped">Dropped</option>
           <option value="Plan to Watch">Plan to Watch</option>
         </select>
+
         <label for="rating">Rating:</label>
         <select name="rating" id="rating">
           <option value="0">0</option>
@@ -167,8 +166,19 @@
           <option value="9">9</option>
           <option value="10">10</option>
         </select>
-        <label for="url">URL:</label>
-        <input type="text" value="" id="url" />
+        <label for="genre">Genre(a-z):</label>
+        <select name="genre" id="genre">
+          <option value="Action & Adventure">Action & Adventure</option>
+          <option value="Comedy">Comedy</option>
+          <option value="Documentary">Documentary</option>
+          <option value="Drama">Drama</option>
+          <option value="Foreign">Foreign</option>
+          <option value="Horror">Horror</option>
+          <option value="Romance">Romance</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Western">Western</option>
+        </select>
         <input
           type="button"
           value="Click To Add Show"
@@ -186,10 +196,6 @@
         <h3>Copyright 2021 by Dylan Wood & Nathan Nixon</h3>
       </div>
     </div>
-
-    <!-- ============================================================================ -->
-    <!-- ==============================LIST========================================== -->
-    <!-- ============================================================================ -->
 
     <div data-role="page" id="list">
       <!-- header -->
@@ -220,7 +226,7 @@
         <ul id="listId"></ul>
       </div>
 
-      <!-- notes footer -->
+      <!-- footer -->
       <div data-role="footer" data-theme="a">
         <div class="centering">
           <img src="thankyou.svg" alt="Thank you!" width="200" />
