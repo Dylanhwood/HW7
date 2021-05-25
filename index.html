@@ -39,19 +39,16 @@
       <div data-role="content" data-theme="b" class="contents">
         <div id="homeDiv">
           <div data-role="content" data-theme="b" class="contents">
-            Add shows you've watched or finished and give them ratings! Your
-            ratings will be saved in a list, and you can view your average
-            ratings!
+            Add shows you've watched or finished and give them ratings! Plus,
+            additional information will be given about how you rate!
           </div>
-          Save your Movie and TV shows for your future reference.<br />
-          All you have to do is go to <a href="#add">Add Shows & Movies</a>
         </div>
       </div>
 
       <!-- notes footer -->
       <div data-role="footer" data-theme="a">
         <div class="centering">
-          <img src="footerImg.jpg" />
+          <img src="thankyou.svg" alt="Thank you!" width="200" />
         </div>
         <h3>Copyright 2021 by Dylan Wood & Nathan Nixon</h3>
       </div>
@@ -66,6 +63,7 @@
 
       <div data-role="header" data-theme="c">
         <h2>Your Statistics</h2>
+        <img src="recorder.svg" alt="recorder" width="50" />
         <div data-role="navbar" data-theme="e" id="nav_bar">
           <ul>
             <li><a href="#home">Home Page</a></li>
@@ -75,9 +73,6 @@
           </ul>
         </div>
         <!-- /navbar -->
-        <div class="centering">
-          <img src="recorder.svg" alt="recorder" width="100" />
-        </div>
       </div>
 
       <!-- content -->
@@ -87,13 +82,7 @@
         <ul>
           <div class="information">
             <li>
-              Your Average Rating:
-              <div id="averageScore" class="stat"></div>
-            </li>
-          </div>
-          <div class="information">
-            <li>
-              Amount of Movies Watched:
+              Amount of Movies Watched Total:
               <div id="numMovies" class="stat"></div>
             </li>
           </div>
@@ -133,6 +122,9 @@
       <!-- header -->
       <div data-role="header" data-theme="a">
         <h2>Add a Show</h2>
+        <div class="centering">
+          <img src="recorder.svg" alt="recorder" width="50" />
+        </div>
         <div data-role="navbar" data-theme="b">
           <ul>
             <li><a href="#home">Home Page</a></li>
