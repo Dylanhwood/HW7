@@ -33,3 +33,10 @@ h2 {
 .information li {
   display: inline-block;
 }
+
+.flex {
+  text-align: center;
+  display: flex;
+  margin-left: 45%;
+  padding: 15px;
+}
