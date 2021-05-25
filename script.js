@@ -1,13 +1,13 @@
-let list = [];
+let list = []
 class Show {
-  constructor( pname, ptype, pstatus, prating, pgenre, purl,) {
+  constructor( pname, ptype, pstatus, prating, pgenre, plink) {
     this.name = pname;
     this.type = ptype;
     this.status = pstatus;
     this.ID = list.length + 1;
     this.rating = prating;
     this.genre = pgenre;
-    this.url = purl;
+    this.link = plink;
     
   }
  
@@ -72,19 +72,19 @@ function showValues() {
 };
 
 function formSubmitEvent() {
-  let showName = $('#showName').val();
+  let programName = $('#programName').val();
   let type = $('#type').val();
   let status = $('#status').val();
   let rating = $('#rating').val();
   let genre = $('#genre').val();
-  let url = $('#url').val();
-  let show = new Show(showName, type, status, parseInt(rating), genre, url);
+  let link = $('#link').val();
+  let show = new Show(programName, type, status, parseInt(rating), genre, link);
   let result = true;
   
   if (result) {
     list.push(show);
-  $('#showName').val('');
-  $('#url').val('');
+  $('#programName').val('');
+  $('#link').val('');
   } else {
     alert("Invalid information. Try again.");
   }
@@ -96,18 +96,18 @@ function showEntries() {
   parent.empty(); 
   list.forEach(item => {
     let text = item.getAll();
-      if (item.url === '') {
+      if (item.link === '') {
         const search_query = item.name.replace(/\s/g, '+')
-        item.url = 'https://www.youtube.com/results?search_query=' + search_query + ' trailer'
+        item.link = 'https://www.youtube.com/results?search_query=' + search_query + ' trailer'
       }
     let newText = document.createElement('li');
     newText.addEventListener('click', 
       function (event) {
         event.preventDefault()
-        if (confirm('Click again to open new window!')) {
-          window.open(item.url)
+        if (confirm('Would you like to open trailer for this program?')) {
+          window.open(item.link)
         }
-      },
+      }, 
       false)
     newText.innerHTML = text;
     // Add it to the unordered list

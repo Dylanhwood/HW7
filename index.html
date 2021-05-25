@@ -43,9 +43,9 @@
           <div data-role="content" data-theme="b" class="contents">
             <h3>
               Add Programs(eg.Shows and Movies) you've watched or finished and
-              give them ratings!<br />The movies will be saved with their
-              attributes; and you can see how many movies of what genre you
-              picked!
+              give them ratings!<br />The movies will be saved with their given
+              information. Additionally, we will supply you wit ha trialer for
+              every movie your enter via YouTube!
             </h3>
           </div>
         </div>
@@ -176,8 +176,8 @@
 
       <!-- content -->
       <div data-role="content" data-theme="e">
-        <label for="showName">Enter Show Name:</label>
-        <input type="text" value="" id="showName" />
+        <label for="programName">Enter Program Name:</label>
+        <input type="text" value="" id="programName" />
         <label for="type">Select a Type</label>
         <select name="type" id="type">
           <option value="Movie">Movie</option>
@@ -219,10 +219,9 @@
           <option value="Thriller">Thriller</option>
           <option value="Western">Western</option>
         </select>
-        <label name="url" id="url">
-          Enter YouTube Trailer URL(If not, we'll make one for you):
+        <label name="link" id="link">
           <br />
-          <input type="text" value="" id="URL" />
+          <input type="hidden" value="" id="link" />
         </label>
         <input
           type="button"
