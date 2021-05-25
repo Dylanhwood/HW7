@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;1,100&display=swap");
+
+html {
+  height: 100%;
+}
 body {
   font-family: "Open Sans", sans-serif;
 }
@@ -22,16 +26,13 @@ h2 {
   justify-content: center;
 }
 
-#homeDiv {
-  background-color: blue;
+ul {
+  list-style-type: none;
 }
-
-.information {
-  text-align: left;
-}
-
-.information li {
-  display: inline-block;
+li {
+  text-decoration: none;
+  line-height: 200%;
+  font-family: "Raleway" light, sans-serif;
 }
 
 .flex {
@@ -39,4 +40,12 @@ h2 {
   display: flex;
   margin-left: 45%;
   padding: 15px;
+}
+.stat {
+  color: rgba(255, 60, 60, 0.808);
+  font-family: "Raleway" light, sans-serif;
+  font-size: 1.25em;
+}
+#info h3 {
+  text-align: center;
 }

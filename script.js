@@ -13,7 +13,7 @@ class Show {
 
 
   getAll() {
-    return this.type + ': "' + this.name + '", ' + 'Current Status: '+ this.status +  ', Rating: ' + this.rating + ', Genre: ' + this.genre;
+    return this.type + ': "' + this.name + '" &#8739; ' + 'Current Status: '+ this.status +  ' &#8739; Rating: ' + this.rating + ' &#8739; Genre: ' + this.genre;
   }
 }
 
@@ -26,13 +26,45 @@ $(document).on("pagebeforeshow","#list",function() {
 $(document).on('pagebeforeshow','#stats',function() {
   showValues();
 });
+
+//Append integer counter to amount of times an array value is repeated
+function showValues() {
+  if (list.length) {
+    let all = $('.stat').map(function() {
+      return this;
+    }).get();
+    all.forEach(item => {
+      item.innerHTML = ''
+    });
+    let numTelevision = list.reduce(((accumulator, currentValue) => currentValue.type !== 'Movie' && currentValue.status !== 'Plan to Watch' ? accumulator + 1 : accumulator), 0);
+    $('#numTelevision').append(numTelevision);
+    let numWatched = list.reduce(((accumulator, currentValue) => currentValue.status == 'Watching' ? accumulator + 1 : accumulator), 0)
+    $('#numWatched').append(numWatched)
+    let numFinished = list.reduce(((accumulator, currentValue) => currentValue.status == 'Completed' ? accumulator + 1 : accumulator), 0)
+    $('#numFinished').append(numFinished)
+    
+    let numMovies = list.reduce(((accumulator, currentValue) => currentValue.type == 'Movie' && currentValue.status !== 'Planning to Watch' ? accumulator + 1 : accumulator), 0)
+    $('#numMovies').append(numMovies)
+    let numPlanning = list.reduce(((accumulator, currentValue) => currentValue.status == 'Plan to Watch' ? accumulator + 1 : accumulator), 0)
+    $('#numPlanning').append(numPlanning)
+    let numAction = list.reduce(((accumulator, currentValue) => currentValue.genre == 'Action & Adventure' ? accumulator + 1 : accumulator), 0);
+    $('#numAction').append(numAction);
+    let numComedy = list.reduce(((accumulator, currentValue) => currentValue.genre == 'Comedy' ? accumulator + 1 : accumulator), 0);
+    $('#numComedy').append(numComedy);
+    let numDoc = list.reduce(((accumulator, currentValue) => currentValue.genre == 'Documentary' ? accumulator + 1 : accumulator), 0);
+    $('#numDoc').append(numDoc);
+    let numDrama = list.reduce(((accumulator, currentValue) => currentValue.genre == 'Drama' ? accumulator + 1 : accumulator), 0);
+    $('#numDrama').append(numDrama);
+  }
+};
+
 function formSubmitEvent() {
   let showName = $('#showName').val();
   let type = $('#type').val();
   let status = $('#status').val();
   let rating = $('#rating').val();
   let genre = $('#genre').val();
-  let show = new Show(showName, type, status, genre, parseInt(rating));
+  let show = new Show(showName, type, status, parseInt(rating), genre);
   let result = true;
   
   if (result) {
@@ -65,27 +97,4 @@ function showEntries() {
   });
 }
 
-function showValues() {
-  if (list.length) {
-    let all = $('.stat').map(function() {
-      return this;
-    }).get();
-    all.forEach(item => {
-      item.innerHTML = ''
-    });
-    // Using given data,return and calculate given amounts for the constructor
-    let totalScore = list.reduce(((accumulator, currentValue) => accumulator + currentValue.rating), 0);
-    $('#averageScore').append(Math.round(totalScore / list.length * 10) / 10);
-    let numTV = list.reduce(((accumulator, currentValue) => currentValue.type !== 'Movie' && currentValue.status !== 'Plan to Watch' ? accumulator + 1 : accumulator), 0);
-    $('#numTV').append(numTV);
-    
-    let numMovies = list.reduce(((accumulator, currentValue) => currentValue.type == 'Movie' && currentValue.status !== 'Planning to Watch' ? accumulator + 1 : accumulator), 0)
-    $('#numMovies').append(numMovies)
-    let numFinished = list.reduce(((accumulator, currentValue) => currentValue.status == 'Completed' ? accumulator + 1 : accumulator), 0)
-    $('#numFinished').append(numFinished)
-    let numWatching = list.reduce(((accumulator, currentValue) => currentValue.status == 'Watching' ? accumulator + 1 : accumulator), 0)
-    $('#numWatching').append(numWatching)
-    let numPlanToWatch = list.reduce(((accumulator, currentValue) => currentValue.status == 'Plan to Watch' ? accumulator + 1 : accumulator), 0)
-    $('#numPlanToWatch').append(numPlanToWatch)
-  }
-}
+

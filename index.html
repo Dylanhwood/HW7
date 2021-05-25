@@ -17,9 +17,6 @@
     <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script src="script.js"></script>
   </head>
-  <!--------------------------------------------------------------------------------------------->
-  <!-------------------------------------Rough Draft 1------------------------------------------->
-  <!--------------------------------------------------------------------------------------------->
   <body>
     <div data-role="page" id="home">
       <!-- header -->
@@ -44,8 +41,10 @@
       <div data-role="content" data-theme="b" class="contents">
         <div id="homeDiv">
           <div data-role="content" data-theme="b" class="contents">
-            Add shows you've watched or finished and give them ratings! Plus,
-            additional information will be given about your movies!
+            Add Programs(eg.Shows and Movies) you've watched or finished and
+            give them ratings!<br />The movies will be saved with their
+            attributes; and you can see how many movies of what genre you
+            picked!
           </div>
         </div>
       </div>
@@ -75,13 +74,13 @@
             <li><a href="#list">Programs List</a></li>
           </ul>
         </div>
-        <!-- /navbar -->
       </div>
+      <!-- /navbar -->
 
       <!-- content -->
 
-      <div data-role="content" data-theme="a">
-        <h3>Here is some Information We Gathered &#8628;</h3>
+      <div data-role="content" data-theme="a" id="info">
+        <h3>Here is some Information We Gathered</h3>
         <ul>
           <li>
             Amount of Movies Watched Total:
@@ -89,20 +88,60 @@
           </li>
 
           <li>
-            <div>TV Series Watched:</div>
-            <div id="numTV" class="stat"></div>
+            TV Series Watched:
+            <div id="numTelevision" class="stat"></div>
           </li>
           <li>
-            <div>Shows Finished:</div>
+            Shows Finished:
             <div id="numFinished" class="stat"></div>
           </li>
           <li>
-            <div>Shows Watching:</div>
-            <div id="numWatching" class="stat"></div>
+            Shows Watching:
+            <div id="numWatched" class="stat"></div>
           </li>
           <li>
-            <div>Shows Planning to Watch:</div>
-            <div id="numPlanToWatch" class="stat"></div>
+            Shows Planning to Watch:
+            <div id="numPlanning" class="stat"></div>
+          </li>
+          <li>
+            Number of Action Movies:
+            <div id="numAction" class="stat"></div>
+          </li>
+          <li>
+            Number of Comedys:
+            <div id="numComedy" class="stat"></div>
+          </li>
+          <li>
+            Number of Documentaries:
+            <div id="numDoc" class="stat"></div>
+          </li>
+          <li>
+            Number of Dramas:
+            <div id="numDrama" class="stat"></div>
+          </li>
+          <li>
+            <div>Number of Foreign Movies:</div>
+            <div id="numForeign" class="stat"></div>
+          </li>
+          <li>
+            <div>Number of Horror Movies:</div>
+            <div id="numHorror" class="stat"></div>
+          </li>
+          <li>
+            <div>Number of Romance Movies:</div>
+            <div id="numRomance" class="stat"></div>
+          </li>
+          <li>
+            <div>Number of Science Fiction Movies:</div>
+            <div id="numScience" class="stat"></div>
+          </li>
+          <li>
+            <div>Number of Thriller Movies:</div>
+            <div id="numThriller" class="stat"></div>
+          </li>
+          <li>
+            <div>Number of Western Movies:</div>
+            <div id="numWestern" class="stat"></div>
           </li>
         </ul>
       </div>
