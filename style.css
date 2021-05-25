@@ -49,3 +49,13 @@ li {
 #info h3 {
   text-align: center;
 }
+
+.flex-box {
+  width: 100%;
+  display: inline;
+  grid-template-columns: 1fr 1fr;
+}
+flex-box:last-child {
+  float: right;
+  text-align: right;
+}

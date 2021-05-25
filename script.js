@@ -114,5 +114,3 @@ function showEntries() {
     parent.append(newText);
   });
 }
-
-
